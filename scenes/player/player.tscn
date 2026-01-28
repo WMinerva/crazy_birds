@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://kv8xodshjf0n"]
+
+[ext_resource type="Texture2D" uid="uid://bhaye8w73f1ch" path="res://assets/sprites/bird.png" id="1_8afob"]
+
+[sub_resource type="GDScript" id="GDScript_8afob"]
+script/source = "extends RigidBody2D
+
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
+atlas = ExtResource("1_8afob")
+region = Rect2(0, 0, 115, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
+atlas = ExtResource("1_8afob")
+region = Rect2(115, 0, 115, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
+atlas = ExtResource("1_8afob")
+region = Rect2(230, 0, 115, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
+atlas = ExtResource("1_8afob")
+region = Rect2(345, 0, 115, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75vfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dovo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmlin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvxji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p47bc")
+}],
+"loop": true,
+"name": &"flap",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8afob"]
+radius = 33.0
+height = 76.0
+
+[node name="Player" type="RigidBody2D" unique_id=1821102165]
+input_pickable = true
+freeze = true
+script = SubResource("GDScript_8afob")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=93595545]
+sprite_frames = SubResource("SpriteFrames_75vfm")
+animation = &"flap"
+autoplay = "flap"
+frame_progress = 0.93628174
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1208288827]
+position = Vector2(3, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8afob")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

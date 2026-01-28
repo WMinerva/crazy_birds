@@ -1,41 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqnxpcg64vsi2"]
+[gd_scene format=3 uid="uid://cqnxpcg64vsi2"]
 
 [ext_resource type="Texture2D" uid="uid://01cmqgg0nium" path="res://assets/sprites/bg.png" id="1_377w7"]
 [ext_resource type="Texture2D" uid="uid://b5wbilf76wysc" path="res://assets/sprites/ground.png" id="2_bovvr"]
+[ext_resource type="PackedScene" uid="uid://bekl45u8goam1" path="res://scenes/crate/crate.tscn" id="3_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://kv8xodshjf0n" path="res://scenes/player/player.tscn" id="4_xb4v1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
 size = Vector2(2400, 162)
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1762819928]
 
-[node name="Environment" type="Node2D" parent="."]
+[node name="Environment" type="Node2D" parent="." unique_id=1283720114]
 
-[node name="Background" type="Sprite2D" parent="Environment"]
+[node name="Background" type="Sprite2D" parent="Environment" unique_id=648269492]
 position = Vector2(969, 543)
 texture = ExtResource("1_377w7")
 metadata/_edit_lock_ = true
 
-[node name="Background2" type="Sprite2D" parent="Environment"]
+[node name="Background2" type="Sprite2D" parent="Environment" unique_id=987114941]
 position = Vector2(3369, 543)
 texture = ExtResource("1_377w7")
 metadata/_edit_lock_ = true
 
-[node name="Ground" type="StaticBody2D" parent="Environment"]
+[node name="Ground" type="StaticBody2D" parent="Environment" unique_id=1303841760]
 position = Vector2(965, 1051)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground"]
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground" unique_id=2017893673]
 texture = ExtResource("2_bovvr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground" unique_id=1979966340]
 shape = SubResource("RectangleShape2D_b2cq8")
 
-[node name="Ground2" type="StaticBody2D" parent="Environment"]
+[node name="Ground2" type="StaticBody2D" parent="Environment" unique_id=1333353062]
 position = Vector2(3365, 1051)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground2"]
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground2" unique_id=1811042492]
 texture = ExtResource("2_bovvr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground2" unique_id=839120845]
 shape = SubResource("RectangleShape2D_b2cq8")
+
+[node name="Crate" parent="." unique_id=1307983271 instance=ExtResource("3_b2cq8")]
+position = Vector2(788, 462)
+
+[node name="Player" parent="." unique_id=1821102165 instance=ExtResource("4_xb4v1")]
+position = Vector2(1486, 469)
