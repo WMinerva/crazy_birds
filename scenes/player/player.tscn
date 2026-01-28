@@ -1,14 +1,7 @@
 [gd_scene format=3 uid="uid://kv8xodshjf0n"]
 
 [ext_resource type="Texture2D" uid="uid://bhaye8w73f1ch" path="res://assets/sprites/bird.png" id="1_8afob"]
-
-[sub_resource type="GDScript" id="GDScript_8afob"]
-script/source = "extends RigidBody2D
-
-
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-"
+[ext_resource type="Script" uid="uid://p30f6gn6wpy8" path="res://scenes/player/player.gd" id="1_dovo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -53,7 +46,7 @@ height = 76.0
 [node name="Player" type="RigidBody2D" unique_id=1821102165]
 input_pickable = true
 freeze = true
-script = SubResource("GDScript_8afob")
+script = ExtResource("1_dovo2")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=93595545]
