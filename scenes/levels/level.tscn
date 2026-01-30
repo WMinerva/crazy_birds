@@ -44,7 +44,16 @@ texture = ExtResource("2_bovvr")
 shape = SubResource("RectangleShape2D_b2cq8")
 
 [node name="Crate" parent="." unique_id=1307983271 instance=ExtResource("3_b2cq8")]
-position = Vector2(788, 462)
+position = Vector2(1154, 700)
+
+[node name="Crate2" parent="." unique_id=223383471 instance=ExtResource("3_b2cq8")]
+position = Vector2(1156, 590)
+
+[node name="Crate3" parent="." unique_id=1017349897 instance=ExtResource("3_b2cq8")]
+position = Vector2(1154, 809)
+
+[node name="Crate4" parent="." unique_id=1907407109 instance=ExtResource("3_b2cq8")]
+position = Vector2(1152, 917)
 
 [node name="PlayerSpawner" type="Marker2D" parent="." unique_id=1848857873]
 position = Vector2(517, 504)

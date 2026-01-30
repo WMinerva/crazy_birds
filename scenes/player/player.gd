@@ -1,10 +1,15 @@
 extends RigidBody2D
 
+@export var force_multiplier: int
+
 var is_dragged = false
+var start_position
+var force_vector
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	start_position = position
 	sleeping_state_changed.connect(_on_sleeping_state_changed)
 
 
@@ -20,6 +25,12 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_released("drag"):
 		is_dragged = false
 		freeze = false
+		launch()
+
+
+func launch():
+	force_vector = (start_position - position) * force_multiplier
+	apply_impulse(force_vector)
 
 
 func _on_sleeping_state_changed() -> void:
