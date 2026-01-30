@@ -51,6 +51,14 @@ script = ExtResource("1_dovo2")
 force_multiplier = 10
 metadata/_edit_group_ = true
 
+[node name="Line2D" type="Line2D" parent="." unique_id=897602386]
+texture_repeat = 2
+points = PackedVector2Array(185, -150, 68.58215, -108.64301)
+width = 8.0
+default_color = Color(0.93333334, 0.2509804, 0.21176471, 1)
+texture = ExtResource("3_gmlin")
+texture_mode = 1
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=93595545]
 sprite_frames = SubResource("SpriteFrames_75vfm")
 animation = &"flap"
@@ -61,13 +69,5 @@ frame_progress = 0.93628174
 position = Vector2(3, 2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8afob")
-
-[node name="Line2D" type="Line2D" parent="." unique_id=897602386]
-texture_repeat = 2
-points = PackedVector2Array(185, -150, 68.58215, -108.64301)
-width = 8.0
-default_color = Color(0.93333334, 0.2509804, 0.21176471, 1)
-texture = ExtResource("3_gmlin")
-texture_mode = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

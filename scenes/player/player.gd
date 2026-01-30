@@ -58,6 +58,7 @@ func launch():
 	freeze = false
 	var force_vector = (start_position - position) * force_multiplier
 	apply_impulse(force_vector)
+	line_2d.visible = false
 
 
 func _on_sleeping_state_changed() -> void:
