@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var force_multiplier: int
 @onready var line_2d: Line2D = $Line2D
 
-var max_drag_distance = 150
+const MAX_DRAG_DISTANCE = 150
 var is_dragged = false
 var start_position
 
@@ -39,8 +39,8 @@ func drag():
 	# position = mouse_position
 	var drag_vector = mouse_position - start_position
 
-	if drag_vector.length() > max_drag_distance:
-		drag_vector = drag_vector.normalized() * max_drag_distance
+	if drag_vector.length() > MAX_DRAG_DISTANCE:
+		drag_vector = drag_vector.normalized() * MAX_DRAG_DISTANCE
 	if drag_vector.x > 0:
 		drag_vector.x = 0
 	position = start_position + drag_vector

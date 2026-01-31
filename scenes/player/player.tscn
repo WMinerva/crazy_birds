@@ -44,7 +44,7 @@ animations = [{
 radius = 33.0
 height = 76.0
 
-[node name="Player" type="RigidBody2D" unique_id=1821102165]
+[node name="Player" type="RigidBody2D" unique_id=1821102165 groups=["player"]]
 input_pickable = true
 freeze = true
 script = ExtResource("1_dovo2")

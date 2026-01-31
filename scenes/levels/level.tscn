@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bekl45u8goam1" path="res://scenes/crate/crate.tscn" id="3_b2cq8"]
 [ext_resource type="Script" uid="uid://dwd1oujrrcc32" path="res://scenes/levels/player_spawner.gd" id="4_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://kv8xodshjf0n" path="res://scenes/player/player.tscn" id="5_urvlt"]
+[ext_resource type="PackedScene" uid="uid://ts4qvth3h2hg" path="res://scenes/enemy/enemy.tscn" id="6_d4w6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
 size = Vector2(2400, 162)
@@ -59,3 +60,7 @@ position = Vector2(1152, 917)
 position = Vector2(517, 504)
 script = ExtResource("4_xb4v1")
 player_scene = ExtResource("5_urvlt")
+
+[node name="Enemy" parent="." unique_id=1575691523 instance=ExtResource("6_d4w6o")]
+position = Vector2(1273, 927)
+velocity_threshold = 50
