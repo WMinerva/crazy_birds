@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dwd1oujrrcc32" path="res://scenes/levels/player_spawner.gd" id="4_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://kv8xodshjf0n" path="res://scenes/player/player.tscn" id="5_urvlt"]
 [ext_resource type="PackedScene" uid="uid://ts4qvth3h2hg" path="res://scenes/enemy/enemy.tscn" id="6_d4w6o"]
+[ext_resource type="Script" uid="uid://kbt4dbmw0ihp" path="res://scenes/levels/follow_camera.gd" id="7_mbbpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
 size = Vector2(2400, 162)
@@ -72,3 +73,11 @@ velocity_threshold = 50
 [node name="Enemy3" parent="." unique_id=1129089452 instance=ExtResource("6_d4w6o")]
 position = Vector2(1055, 931)
 velocity_threshold = 50
+
+[node name="FollowCamera" type="Camera2D" parent="." unique_id=1681120009]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("7_mbbpy")
+
+[connection signal="player_spawned" from="PlayerSpawner" to="FollowCamera" method="_on_player_spawner_player_spawned"]

@@ -1,6 +1,7 @@
 extends Marker2D
 
 @export var player_scene: PackedScene
+signal player_spawned(player_instance)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,3 +19,4 @@ func create_player():
 	add_sibling.call_deferred(player_instance)
 	player_instance.position = position
 	player_instance.tree_exited.connect(create_player)
+	player_spawned.emit(player_instance)
