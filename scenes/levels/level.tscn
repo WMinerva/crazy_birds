@@ -64,3 +64,11 @@ player_scene = ExtResource("5_urvlt")
 [node name="Enemy" parent="." unique_id=1575691523 instance=ExtResource("6_d4w6o")]
 position = Vector2(1273, 927)
 velocity_threshold = 50
+
+[node name="Enemy2" parent="." unique_id=1653340963 instance=ExtResource("6_d4w6o")]
+position = Vector2(1151, 500)
+velocity_threshold = 50
+
+[node name="Enemy3" parent="." unique_id=1129089452 instance=ExtResource("6_d4w6o")]
+position = Vector2(1055, 931)
+velocity_threshold = 50
