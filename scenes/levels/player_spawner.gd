@@ -1,17 +1,13 @@
 extends Marker2D
 
-@export var player_scene: PackedScene
 signal player_spawned(player_instance)
+# const PLAYER = preload("res://scenes/player/player.tscn")
+@export var player_scene: PackedScene
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_player()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func create_player():

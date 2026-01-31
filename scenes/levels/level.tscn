@@ -2,10 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://01cmqgg0nium" path="res://assets/sprites/bg.png" id="1_377w7"]
 [ext_resource type="Texture2D" uid="uid://b5wbilf76wysc" path="res://assets/sprites/ground.png" id="2_bovvr"]
-[ext_resource type="PackedScene" uid="uid://bekl45u8goam1" path="res://scenes/crate/crate.tscn" id="3_b2cq8"]
 [ext_resource type="Script" uid="uid://dwd1oujrrcc32" path="res://scenes/levels/player_spawner.gd" id="4_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://kv8xodshjf0n" path="res://scenes/player/player.tscn" id="5_urvlt"]
-[ext_resource type="PackedScene" uid="uid://ts4qvth3h2hg" path="res://scenes/enemy/enemy.tscn" id="6_d4w6o"]
 [ext_resource type="Script" uid="uid://kbt4dbmw0ihp" path="res://scenes/levels/follow_camera.gd" id="7_mbbpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
@@ -45,39 +43,19 @@ texture = ExtResource("2_bovvr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground2" unique_id=839120845]
 shape = SubResource("RectangleShape2D_b2cq8")
 
-[node name="Crate" parent="." unique_id=1307983271 instance=ExtResource("3_b2cq8")]
-position = Vector2(1154, 700)
-
-[node name="Crate2" parent="." unique_id=223383471 instance=ExtResource("3_b2cq8")]
-position = Vector2(1156, 590)
-
-[node name="Crate3" parent="." unique_id=1017349897 instance=ExtResource("3_b2cq8")]
-position = Vector2(1154, 809)
-
-[node name="Crate4" parent="." unique_id=1907407109 instance=ExtResource("3_b2cq8")]
-position = Vector2(1152, 917)
-
 [node name="PlayerSpawner" type="Marker2D" parent="." unique_id=1848857873]
 position = Vector2(517, 504)
 script = ExtResource("4_xb4v1")
 player_scene = ExtResource("5_urvlt")
-
-[node name="Enemy" parent="." unique_id=1575691523 instance=ExtResource("6_d4w6o")]
-position = Vector2(1273, 927)
-velocity_threshold = 50
-
-[node name="Enemy2" parent="." unique_id=1653340963 instance=ExtResource("6_d4w6o")]
-position = Vector2(1151, 500)
-velocity_threshold = 50
-
-[node name="Enemy3" parent="." unique_id=1129089452 instance=ExtResource("6_d4w6o")]
-position = Vector2(1055, 931)
-velocity_threshold = 50
 
 [node name="FollowCamera" type="Camera2D" parent="." unique_id=1681120009]
 position = Vector2(960, 540)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("7_mbbpy")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=2103426926]
+
+[node name="Crates" type="Node2D" parent="." unique_id=578960277]
 
 [connection signal="player_spawned" from="PlayerSpawner" to="FollowCamera" method="_on_player_spawner_player_spawned"]
