@@ -8,8 +8,22 @@ const LEVELS = {
 }
 
 var current_level = 0
+var enemies_left = 0
+
+
+func set_enemies_left(enemies):
+	enemies_left = enemies
+
+
+func decrease_enemies_left():
+	enemies_left -= 1
+	if enemies_left == 0:
+		load_next_level.call_deferred()
 
 
 func load_next_level():
 	current_level += 1
-	get_tree().change_scene_to_packed(LEVELS[current_level])
+	if current_level <= LEVELS.size():
+		get_tree().change_scene_to_packed(LEVELS[current_level])
+	else:
+		pass

@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://cqnxpcg64vsi2"]
 
 [ext_resource type="Texture2D" uid="uid://01cmqgg0nium" path="res://assets/sprites/bg.png" id="1_377w7"]
+[ext_resource type="Script" uid="uid://bt3cvffskg72b" path="res://scenes/levels/level.gd" id="1_d4w6o"]
 [ext_resource type="Texture2D" uid="uid://b5wbilf76wysc" path="res://assets/sprites/ground.png" id="2_bovvr"]
 [ext_resource type="Script" uid="uid://dwd1oujrrcc32" path="res://scenes/levels/player_spawner.gd" id="4_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://kv8xodshjf0n" path="res://scenes/player/player.tscn" id="5_urvlt"]
 [ext_resource type="Script" uid="uid://kbt4dbmw0ihp" path="res://scenes/levels/follow_camera.gd" id="7_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://skix048bmpsn" path="res://scenes/ui/hud/hud.tscn" id="7_ouxo3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cq8"]
 size = Vector2(2400, 162)
 
 [node name="Level" type="Node2D" unique_id=1762819928]
+script = ExtResource("1_d4w6o")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1283720114]
 
@@ -57,5 +60,10 @@ script = ExtResource("7_mbbpy")
 [node name="Enemies" type="Node2D" parent="." unique_id=2103426926]
 
 [node name="Crates" type="Node2D" parent="." unique_id=578960277]
+
+[node name="UI_layer" type="CanvasLayer" parent="." unique_id=513993801]
+
+[node name="HUD" parent="UI_layer" unique_id=1996511806 instance=ExtResource("7_ouxo3")]
+metadata/_edit_lock_ = true
 
 [connection signal="player_spawned" from="PlayerSpawner" to="FollowCamera" method="_on_player_spawner_player_spawned"]

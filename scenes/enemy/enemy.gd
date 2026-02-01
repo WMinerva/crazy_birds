@@ -19,6 +19,7 @@ func _on_body_entered(body: Node2D):
 
 
 func destroy_enemy():
+	GameManager.decrease_enemies_left()
 	queue_free()
 	explode()
 
