@@ -15,9 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Crazy Birds"
-run/main_scene="uid://cqnxpcg64vsi2"
+run/main_scene="uid://brpd008e2jp8p"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://d3ewt7133p13y"
 
 [display]
 
@@ -26,6 +30,10 @@ window/size/viewport_height=1080
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom="uid://b65hknrftgd0x"
 
 [input]
 
