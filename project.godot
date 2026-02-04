@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SignalManager="*uid://du80tyb154obn"
 GameManager="*uid://d3ewt7133p13y"
 
 [display]
