@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dtnevjhxso1qy"]
+
+[ext_resource type="Script" uid="uid://bwfc63xw7pbnt" path="res://scenes/ui/score_screen/score_screen.gd" id="1_4cj3c"]
+[ext_resource type="Texture2D" uid="uid://01cmqgg0nium" path="res://assets/sprites/bg.png" id="1_4kmwa"]
+
+[node name="ScoreScreen" type="Control" unique_id=329755931]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4cj3c")
+
+[node name="Background" type="TextureRect" parent="." unique_id=945473177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4kmwa")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1626516995]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1146247763]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=995834030]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=356286648]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "launches"
+horizontal_alignment = 1

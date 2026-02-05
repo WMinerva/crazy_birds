@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b5wbilf76wysc" path="res://assets/sprites/ground.png" id="2_bovvr"]
 [ext_resource type="Script" uid="uid://dwd1oujrrcc32" path="res://scenes/levels/player_spawner.gd" id="4_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://kv8xodshjf0n" path="res://scenes/player/player.tscn" id="5_urvlt"]
+[ext_resource type="Script" uid="uid://di7mthrhqnkys" path="res://scenes/levels/level_completed_timer.gd" id="7_icy5c"]
 [ext_resource type="Script" uid="uid://kbt4dbmw0ihp" path="res://scenes/levels/follow_camera.gd" id="7_mbbpy"]
 [ext_resource type="PackedScene" uid="uid://skix048bmpsn" path="res://scenes/ui/hud/hud.tscn" id="7_ouxo3"]
 
@@ -61,9 +62,15 @@ script = ExtResource("7_mbbpy")
 
 [node name="Crates" type="Node2D" parent="." unique_id=578960277]
 
+[node name="LevelCompletedTimer" type="Timer" parent="." unique_id=911669329]
+wait_time = 2.0
+one_shot = true
+script = ExtResource("7_icy5c")
+
 [node name="UI_layer" type="CanvasLayer" parent="." unique_id=513993801]
 
 [node name="HUD" parent="UI_layer" unique_id=1996511806 instance=ExtResource("7_ouxo3")]
 metadata/_edit_lock_ = true
 
 [connection signal="player_spawned" from="PlayerSpawner" to="FollowCamera" method="_on_player_spawner_player_spawned"]
+[connection signal="timeout" from="LevelCompletedTimer" to="LevelCompletedTimer" method="_on_timeout"]
